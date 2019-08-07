@@ -13,18 +13,18 @@ class SchoolClassesController < ApplicationController
 	end
 
 	def create
-	    @class = SchoolClass.create(post_params(:title, :room_number))
-      redirect_to school_class_path(@class)
+	   @class = SchoolClass.create(post_params(:title, :room_number))
+    redirect_to school_class_path(@class)
 	end
 
 	def update
-    @class = Post.find(params[:id])
-    @class.update(post_params(:title))
-    redirect_to school_class__path(@class)
+    @class = SchoolClass.find(params[:id])
+    @class.update(post_params(:title, :room_number))
+    redirect_to school_class_path(@class)
 	end
 
 	def edit
-
+    @class = SchoolClass.find(params[:id])
 	end
 	
 	private
