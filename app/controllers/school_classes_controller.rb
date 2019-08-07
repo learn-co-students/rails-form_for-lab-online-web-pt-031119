@@ -9,7 +9,7 @@ class SchoolClassesController < ApplicationController
 	end
 
 	def new
-	  
+	  @class = SchoolClass.new
 	end
 
 	def create
